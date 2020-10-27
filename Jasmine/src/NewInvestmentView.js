@@ -2,7 +2,13 @@
 {
     function NewInvestmentView(params)
     {
-        this.$element = $(params.selector);
+        this.$element = $(params.id);
+        this.listView = params.listView;
+
+        this.$element.on('submit', function ()
+        {
+            this.listView.addInvestment(/* new investment */);
+        }.bind(this));
     }
 
     this.NewInvestmentView = NewInvestmentView;

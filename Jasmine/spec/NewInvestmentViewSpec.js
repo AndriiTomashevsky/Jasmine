@@ -3,14 +3,20 @@
 
 describe("NewInvestmentView", function ()
 {
-    var view;
+    var view, listView;
 
     beforeEach(function ()
     {
         loadFixtures('NewInvestmentView.html');
+        appendLoadFixtures('InvestmentListView.html');
+
+        listView = new InvestmentListView({
+            id: 'investment-list'
+        });
 
         view = new NewInvestmentView({
-            selector: '#new-investment'
+            id: '#new-investment',
+            listView: listView
         });
     });
 
@@ -34,5 +40,19 @@ describe("NewInvestmentView", function ()
 
     it("should allow the input of the share price", function ()
     {
+    });
+
+    describe('when its add button is clicked', function ()
+    {
+        beforeEach(function ()
+        {
+            // fill form inputs
+            // simulate the clicking of the button
+        });
+
+        it('should add the investment to the list', function ()
+        {
+            expect(listView.count()).toEqual(1);
+        });
     });
 });
