@@ -3,14 +3,20 @@
 
 describe("NewRegistrationView", function ()
 {
+    var view;
+
     beforeEach(function ()
     {
         loadFixtures('NewRegistrationView.html');
+
+        view = new NewRegistrationView({
+            selector: '#myForm'
+        });
     });
 
-    afterEach(function ()
+    it("should expose a property with its DOM element", function ()
     {
-        $('#my-form').remove();
+        expect(view.$element).toExist();
     });
 
     it("should allow the input of the stock symbol", function ()

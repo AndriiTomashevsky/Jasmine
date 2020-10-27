@@ -3,14 +3,25 @@
 
 describe("NewInvestmentView", function ()
 {
+    var view;
+
     beforeEach(function ()
     {
         loadFixtures('NewInvestmentView.html');
+
+        view = new NewInvestmentView({
+            selector: '#new-investment'
+        });
     });
 
-    afterEach(function ()
+    it("should expose a property with its DOM element", function ()
     {
-        $('#my-form').remove();
+        expect(view.$element).toExist();
+    });
+
+    it("should have an empty stock symbol", function ()
+    {
+        expect(view.getSymbolInput()).toHaveValue('');
     });
 
     it("should allow the input of the stock symbol", function ()

@@ -2,7 +2,7 @@
 {
     function NewRegistrationView(params)
     {
-
+        this.$element = $(params.selector);
     }
 
     this.NewRegistrationView = NewRegistrationView;
