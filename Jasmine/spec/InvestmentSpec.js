@@ -8,7 +8,11 @@ describe("Investment", function ()
 
     beforeEach(function ()
     {
-        stock = new Stock();
+        stock = new Stock({
+            symbol: "",
+            sharePrice: 0
+
+        });
         investment = new Investment({
             stock: stock,
             shares: 100,

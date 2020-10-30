@@ -97,6 +97,17 @@ describe('Learning JS', function ()
 
 
     });
+
+    describe('OperatorsTest', function ()
+    {
+        it('|| works like ?? when first parameter null, "", 0, false', function ()
+        {
+            var param = "";
+            var paramWithDefault = param || 'Default Value';
+
+            expect(paramWithDefault).toEqual('Default Value');
+        });
+    });
 });
 
 describe('Flanagan', function ()
