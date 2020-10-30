@@ -30,3 +30,14 @@ NewInvestmentView.prototype.setSymbol = function (value)
 {
     this.$('.new-investment-stock-symbol').val(value);
 };
+
+NewInvestmentView.prototype.onCreate = function (callback)
+{
+    this._callback = callback;
+};
+
+NewInvestmentView.prototype.create = function ()
+{
+    this._callback(/*new investment*/);
+};
+
