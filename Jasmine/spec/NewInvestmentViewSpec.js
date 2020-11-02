@@ -97,7 +97,7 @@ describe("NewInvestmentView", function ()
             it('should invoke the "onCreate" callback with the created investment', function ()
             {
                 expect(callbackSpy).toHaveBeenCalled();
-                //expect(callbackSpy).toHaveBeenCalledWith(investment);
+                expect(callbackSpy).toHaveBeenCalledWith(investment);
             });
         });
     });

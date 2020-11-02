@@ -242,13 +242,36 @@ function daz()
 
 function foo4()
 {
-   return this.bar1;
+    return this.bar1;
 }
 
 var o3 = { bar1: "bar3" };
 
 var bar1 = "bar1";
 
+function outer()
+{
+    let x = 5;
+
+    function inner()
+    {
+        x++;
+
+        return x;
+    }
+
+    return inner;
+}
+
+function multiply(n)
+{
+    var x = n;
+
+    return function (m)
+    {
+        return x * m;
+    };
+}
 
 describe('METANIT', function ()
 {
@@ -358,4 +381,94 @@ describe('METANIT', function ()
 
     });
 
+    describe('closure', function ()
+    {
+        it('inner function should access to outer function parameter x', function ()
+        {
+            let fn = outer();
+
+            expect(fn()).toEqual(6);
+            expect(fn()).toEqual(7);
+            expect(fn()).toEqual(8);
+        });
+
+        it("fn1 is closure, it's uniting two things: function inner function and scope of outer function", function ()
+        {
+            var fn1 = multiply(5);
+            expect(fn1(6)).toEqual(30);
+        });
+
+        it('another variant of calling closure', function ()
+        {
+            var result = multiply(5)(6);
+
+            expect(result).toEqual(30);
+        });
+    });
+
+    describe(' Immediately Invoked Function Expression (IIFE)', function ()
+    {
+        it('IIFE', function ()
+        {
+            let x;
+
+            (function ()
+            {
+                x = 5;
+            }());
+
+            expect(x).toEqual(5);
+        });
+
+        it('IIFE with parameter', function ()
+        {
+            let x;
+
+            (function (n)
+            {
+                return x = n;
+            }(4));
+
+            expect(x).toEqual(4);
+        });
+    });
+
+    describe('Hoisting', function ()
+    {
+        it('f should return NaN', function ()
+        {
+            var foo5;
+            var a6 = 5 + foo5;
+
+            expect(a6).toBeNaN();
+        });
+
+        it('f should return NaN', function ()
+        {
+            var a = 5 + foo5;
+            var foo5 = 3;
+
+            expect(a).toBeNaN();
+        });
+
+        it('f should return result', function ()
+        {
+            expect(f()).toEqual("Hello Hoisting");
+
+            function f()
+            {
+                return "Hello Hoisting";
+            }
+        });
+
+        it('f should not return result', function ()
+        {
+            //expect(f()).not.toEqual("Hello Hoisting");
+
+            //var f = function ()
+            //{
+            //    return "Hello Hoisting";
+            //};
+        });
+    });
 });
