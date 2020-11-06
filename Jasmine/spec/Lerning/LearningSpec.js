@@ -1,6 +1,4 @@
-﻿var global = this;
-
-describe('Learning JS', function ()
+﻿describe('Learning JS', function ()
 {
     function assert(message, expr)
     {
@@ -193,86 +191,6 @@ describe('Flanagan', function ()
     });
 });
 
-/////////////////
-function foo()
-{
-    var bar = "bar";
-
-    return this.bar;
-}
-
-function foo2()
-{
-    //"use strict";
-    var bar = "bar";
-
-    return this.bar;
-}
-
-var bar = "bar2";
-///////////////////////
-let z = 10;
-/////////////////////////
-var o1 = {
-    bar2: "bar2",
-    foo: function ()
-    {
-        return this.bar2;
-    }
-};
-
-var o2 = { bar2: "bar4", foo: o1.foo };
-
-var bar2 = "bar3";
-var foo3 = o1.foo;
-//////////////////////////
-
-var bar5 = "bar2";
-
-function daz()
-{
-    var bar5 = "bar5";
-    function maz()
-    {
-        return this.bar5;
-    }
-    return maz();
-}
-//////////////////////
-
-function foo4()
-{
-    return this.bar1;
-}
-
-var o3 = { bar1: "bar3" };
-
-var bar1 = "bar1";
-
-function outer()
-{
-    let x = 5;
-
-    function inner()
-    {
-        x++;
-
-        return x;
-    }
-
-    return inner;
-}
-
-function multiply(n)
-{
-    var x = n;
-
-    return function (m)
-    {
-        return x * m;
-    };
-}
-
 describe('METANIT', function ()
 {
     describe('let and var', function ()
@@ -339,12 +257,12 @@ describe('METANIT', function ()
             expect(foo()).toBe("bar2");
         });
 
-        it('this inside function in strict mode should trow error', function ()
+        it('this inside function in strict mode should be undefined', function ()
         {
             expect(foo2()).toBe("bar2"); //  Cannot read property 'bar' of undefined
         });
 
-        it('this inside object should references to object', function ()
+        it('this inside function of object should references to property of object, not to variable of function', function ()
         {
             var o3 = { bar: "bar3", foo: foo };
             var o4 = { bar: "bar4", foo: foo };
@@ -354,7 +272,7 @@ describe('METANIT', function ()
             expect(o4.foo()).toEqual("bar4");
         });
 
-        it('this inside object should references to object 2', function ()
+        it('this inside function of object should references to property of object, not to variable of function', function ()
         {
             expect(foo3()).toEqual("bar3");
             expect(o1.foo()).toEqual("bar2");
@@ -392,7 +310,7 @@ describe('METANIT', function ()
             expect(fn()).toEqual(8);
         });
 
-        it("fn1 is closure, it's uniting two things: function inner function and scope of outer function", function ()
+        it("fn1 is closure, it's uniting two things: inner function and scope of outer function", function ()
         {
             var fn1 = multiply(5);
             expect(fn1(6)).toEqual(30);
@@ -469,6 +387,27 @@ describe('METANIT', function ()
             //{
             //    return "Hello Hoisting";
             //};
+        });
+    });
+
+    describe('Pattern Module', function ()
+    {
+        it('should behave...', function ()
+        {
+            expect(foo1.display()).toEqual('hello');
+        });
+    });
+
+    describe('Namespaces', function ()
+    {
+        it('should behave...', function ()
+        {
+            expect(Module.startModule()).toEqual("MODULE 1");
+        });
+
+        it('should behave...', function ()
+        {
+            expect(message).toEqual('Module2');
         });
     });
 });

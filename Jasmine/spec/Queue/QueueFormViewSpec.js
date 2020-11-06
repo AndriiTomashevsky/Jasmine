@@ -1,7 +1,4 @@
-﻿/// <reference path="..\lib/jasmine-3.6.0/jasmine.js" />
-/// <reference path="..\src/NewRegistrationView.js" />
-
-describe("NewRegistrationView", function ()
+﻿describe("NewRegistrationView", function ()
 {
     var view;
 
