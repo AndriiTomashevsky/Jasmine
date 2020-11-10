@@ -1,0 +1,47 @@
+﻿body {
+    max-width: 500px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#datepicker {
+    background-color: white;
+}
+
+.text-danger {
+    color: red !important;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+select option:disabled {
+    color: #b9b9b9;
+}
+
+.modal-body {
+    padding-left: 47px !important;
+}
+
+/*.modal-body span {
+        font-size: 16px;
+    }
+
+        .modal-body span.text-bold {
+            font-size: 14px;
+        }*/
+
+#main-title {
+    color: #73bae2;
+    /*background-color: rgb(248,248,248);*/
+    /*text-align: center;*/
+    font-size: 24px;
+    font-family: "Open Sans","Raleway",sans-serif;
+}
+
+#warningtext {
+    text-align: center;
+    font-size: 17px;
+}

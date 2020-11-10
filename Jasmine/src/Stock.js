@@ -4,12 +4,16 @@
     this.sharePrice = params.sharePrice;
 }
 
-Stock.prototype.fetch = function ()
+Stock.prototype.fetch = function (params)
 {
-    var url = 'http://localhost:8000/stocks/' + this.symbol;
+    params = params || {};
+    var that = this;
+    var success = params.success || function () { };
+    var url = 'http://localhost:8000/stocks/' + that.symbol;
 
     $.getJSON(url, function (data)
     {
         this.sharePrice = data.sharePrice;
+        success(that);
     }.bind(this));
 };
