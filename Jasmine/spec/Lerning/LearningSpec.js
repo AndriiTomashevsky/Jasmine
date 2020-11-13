@@ -272,7 +272,7 @@ describe('METANIT', function ()
             expect(o4.foo()).toEqual("bar4");
         });
 
-        it('this inside function of object should references to property of object, not to variable of function', function ()
+        it('this inside function of object should references to property of object', function ()
         {
             expect(foo3()).toEqual("bar3");
             expect(o1.foo()).toEqual("bar2");
@@ -284,14 +284,14 @@ describe('METANIT', function ()
             expect(daz()).toEqual("bar2");
         });
 
-        it('this with call(o) or apply(o) should references to o', function ()
+        it('this with call(o) or apply(o) should references to property of object', function ()
         {
             expect(foo4()).toEqual("bar1");
             expect(foo4.call(o3)).toEqual("bar3");
             expect(foo4.apply(o3)).toEqual("bar3");
         });
 
-        it('this with bind(o) should references to o and bind(o) create new function', function ()
+        it('this with bind(o) should references to property of object and bind(o) create new function', function ()
         {
             var func = foo4.bind(o3);
             expect(func()).toEqual("bar3");

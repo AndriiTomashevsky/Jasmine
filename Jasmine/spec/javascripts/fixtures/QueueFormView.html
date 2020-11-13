@@ -1,52 +1,52 @@
-﻿<form action="/QueueSeason/Registration" class="form-horizontal left" id="myForm" method="post">
+﻿<form action="/QueueSeason/Registration" class="form-horizontal left" id="new-registration" method="post" novalidate="novalidate">
     <div class="form-group">
         <label class="control-label col-md-5" for="Company">Організація</label>
         <div class="col-md-7">
-            <input class="form-control" data-val="true" data-val-required="Поле Організація обов&#39;язкове для заповнення" id="Company" name="Company" placeholder="Назва організації" type="text" value="" />
-            <span class="field-validation-valid tocheckedaccount text-danger" data-valmsg-for="Company" data-valmsg-replace="true"></span>
+            <input class="form-control" data-val="true" data-val-required="Поле Організація обов'язкове для заповнення" id="Company" name="Company" placeholder="Назва організації" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="Company" data-valmsg-replace="true"></span>
             <span class="сompany"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="FullName">ПІБ</label>
         <div class="col-md-7">
-            <input class="form-control" data-val="true" data-val-regex="Не допустимий формат вводу" data-val-regex-pattern="^[А-Яа-яЁёІіЇїЄє&#39;\s\-]+$" data-val-required="Поле ПІБ обов&#39;язкове для заповнення" id="FullName" name="FullName" pattern="[а-яА-ЯіІїІєЄйЙ]+" placeholder="Прізвище, Ім&#39;я, По-батькові" type="text" value="" />
-            <span class="field-validation-valid tocheckedaccount text-danger" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+            <input class="form-control" data-val="true" data-val-regex="Не допустимий формат вводу" data-val-regex-pattern="^[А-Яа-яЁёІіЇїЄє'\s\-]+$" data-val-required="Поле ПІБ обов'язкове для заповнення" id="FullName" name="FullName" pattern="[а-яА-ЯіІїІєЄйЙ]+" placeholder="Прізвище, Ім'я, По-батькові" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
             <span class="fullname"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="PhoneNumber">Номер телефону</label>
         <div class="col-md-7">
-            <input class="form-control" data-val="true" data-val-regex="Не допустимий формат номеру телефона" data-val-regex-pattern="^\+38\(\d{3}\)-\d{3}-\d{2}-\d{2}$" data-val-required="Поле Номер телефону обов&#39;язкове для заповнення" id="PhoneNumber" name="PhoneNumber" placeholder="+38 (___)-___-__-__" type="text" value="" />
+            <input class="form-control" data-val="true" data-val-regex="Не допустимий формат номеру телефона" data-val-regex-pattern="^\+38\(\d{3}\)-\d{3}-\d{2}-\d{2}$" data-val-required="Поле Номер телефону обов'язкове для заповнення" id="PhoneNumber" name="PhoneNumber" placeholder="+38 (___)-___-__-__" type="text" value="" maxlength="18" autocomplete="off">
             <span class="field-validation-valid text-danger" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="Email">Електронна пошта</label>
         <div class="col-md-7">
-            <input class="form-control" data-val="true" data-val-email="Не допустимий формат електронної пошти " data-val-required="Поле Електронна пошта обов&#39;язкове для заповнення" id="Email" name="Email" placeholder="Введіть email" type="text" value="" />
+            <input class="form-control" data-val="true" data-val-email="Не допустимий формат електронної пошти " data-val-required="Поле Електронна пошта обов'язкове для заповнення" id="Email" name="Email" placeholder="Введіть email" type="text" value="">
             <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="ServiceCenter">Центри обслуговування</label>
         <div class="col-md-7">
-            <select class="form-control" data-val="true" data-val-required="Поле Центри обслуговування обов&#39;язкове для заповнення" id="ServiceCenter" name="ServiceCenter"></select>
+            <select class="form-control" data-val="true" data-val-required="Поле Центри обслуговування обов'язкове для заповнення" id="ServiceCenter" name="ServiceCenter"><option value="" disabled="" selected="">Оберіть центр обслуговування</option><option id="1" value="пров. Задорожній, 3 корп. 1">пров. Задорожній, 3 корп. 1</option></select>
             <span class="field-validation-valid text-danger" data-valmsg-for="ServiceCenter" data-valmsg-replace="true"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="Date">Дата</label>
         <div class="col-md-7">
-            <input class="form-control" data-val="true" data-val-date="The field Дата must be a date." data-val-required="Поле Дата обов&#39;язкове для заповнення" id="datepicker" name="Date" onkeypress="return false" placeholder="Оберіть дату" readonly="true" type="text" value="" />
+            <input class="form-control" data-val="true" data-val-date="The field Дата must be a date." data-val-required="Поле Дата обов'язкове для заповнення" id="datepicker" name="Date" onkeypress="return false" placeholder="Оберіть дату" readonly="true" type="text" value="" disabled="disabled">
             <span class="field-validation-valid text-danger" data-valmsg-for="Date" data-valmsg-replace="true"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-md-5" for="Time">Час</label>
         <div class="col-md-7">
-            <select class="form-control" data-val="true" data-val-required="Поле Час обов&#39;язкове для заповнення" id="Time" name="Time">
+            <select class="form-control" data-val="true" data-val-required="Поле Час обов'язкове для заповнення" id="Time" name="Time" disabled="disabled">
                 <option disabled="disabled" selected="selected" value="">Оберіть час</option>
             </select>
             <span class="field-validation-valid text-danger" data-valmsg-for="Time" data-valmsg-replace="true"></span>
@@ -55,8 +55,7 @@
     <div class="form-group">
         <label class="control-label col-md-5" for="Annotation">Примітка</label>
         <div class="col-md-7">
-            <textarea class="form-control" cols="20" id="Annotation" maxlength="250" name="Annotation" placeholder="Примітка" rows="3" style="resize: none;">
-</textarea>
+            <textarea class="form-control" cols="20" id="Annotation" maxlength="250" name="Annotation" placeholder="Примітка" rows="3" style="resize: none;"></textarea>
             <span class="field-validation-valid text-danger" data-valmsg-for="Annotation" data-valmsg-replace="true"></span>
         </div>
     </div>
@@ -66,3 +65,30 @@
         </div>
     </div>
 </form>
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center">Реєстрація</h4>
+            </div>
+            <div class="modal-body">
+                <p><span class="text-bold">Організація: </span><span id="modalCompany"></span></p>
+                <p><span class="text-bold">ПІБ: </span><span id="modalFullName"></span></p>
+                <p><span class="text-bold">Телефон: </span><span id="modalPhoneNumber"></span></p>
+                <p><span class="text-bold">Електронна пошта: </span><span id="modalEmail"></span></p>
+                <p><span class="text-bold">Дата: </span><span id="modalDate"></span></p>
+                <p><span class="text-bold">Час: </span><span id="modalTime"></span></p>
+                <p style="word-wrap: break-word;"><span class="text-bold">Примітка: </span><span id="modalAnnotation"></span></p>
+                <p id="warningtext"><span class="text-danger"></span></p>
+                <p><span class="text-bold">Ознайомитися з переліком необхідних документів можете за посиланням: </span><a href="https://kyivgaz.ua/images/poperedjennya.pdf" target="_blank">https://kyivgaz.ua/images/poperedjennya.pdf</a></p>
+                <p><span class="text-bold">Прийом документів за адресою: </span><span>пров. Задорожній, 3 корп. 1</span></p>
+            </div>
+            <div class="modal-footer">
+                <button form="new-registration" id="modalregisterbutton" class="btn btn-default" style="margin-top: 0.2em !important;">Записатись</button>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 0.2em !important;">Відміна</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

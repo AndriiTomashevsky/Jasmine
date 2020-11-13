@@ -33,6 +33,11 @@ describe("NewInvestmentView", function ()
 
     it("should allow the input of the stock symbol", function ()
     {
+        var input = view.$element.find('.new-investment-stock-symbol');
+
+        expect(input).toBeMatchedBy('input[type=text]');
+        expect(input).not.toBeDisabled();
+
         expect(view.$element.find('.new-investment-stock-symbol')).toBeMatchedBy('input[type=text]');
     });
 
